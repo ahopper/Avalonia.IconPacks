@@ -64,27 +64,7 @@ foreach(var path in Directory.EnumerateFiles("E:\\downloads\\VS2017 Image Librar
     TemplateHelper.WriteTemplateOutputToFile("VSImageLib.xaml", Host, GenerationEnvironment);
     GenerationEnvironment = new System.Text.StringBuilder();
 #>
-<Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Avalonia.IconPacks">
-	<ScrollViewer >
-		<WrapPanel Width="1200"> 
-<#foreach(var iconKey in passed)
-{
-#>
-			<Border Width="32" Height="32" ToolTip.Tip="<#=iconKey#>">
-				<DrawingPresenter Drawing="{StaticResource <#=iconKey#>}"/>
-			</Border>
-<#
-}
-#>
-		</WrapPanel>
-    </ScrollViewer>
-</Window>
-<#
-    TemplateHelper.WriteTemplateOutputToFile("../MainWindow.xaml", Host, GenerationEnvironment);
-    GenerationEnvironment = new System.Text.StringBuilder();
-#>
+
 
 <#+
 

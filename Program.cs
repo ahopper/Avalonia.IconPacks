@@ -8,12 +8,13 @@ namespace Avalonia.IconPacks
     {
         static void Main(string[] args)
         {
-            BuildAvaloniaApp().Start<MainWindow>();
+            BuildAvaloniaApp().Start<MainWindow>(() => new Avalonia.IconPacks.ViewModels.MainViewModel());
         }
 
         public static AppBuilder BuildAvaloniaApp()
             => AppBuilder.Configure<App>()
                 .UsePlatformDetect()
+                .UseReactiveUI()
                 .LogToDebug();
     }
 }

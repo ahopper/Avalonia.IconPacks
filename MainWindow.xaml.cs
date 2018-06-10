@@ -1,6 +1,10 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
+using Avalonia.IconPacks.ViewModels;
 using Avalonia.Markup.Xaml;
+using Avalonia.Platform;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace Avalonia.IconPacks
 {
@@ -11,7 +15,16 @@ namespace Avalonia.IconPacks
             InitializeComponent();
 #if DEBUG
             this.AttachDevTools();
-#endif
+#endif         
+            this.DataContextChanged += MainWindow_DataContextChanged;
+        }
+
+        private void MainWindow_DataContextChanged(object sender, System.EventArgs e)
+        {
+            if (DataContext is MainViewModel vm)
+            {
+                vm.window = this;
+            }
         }
 
         private void InitializeComponent()
