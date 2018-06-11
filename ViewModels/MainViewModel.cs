@@ -21,8 +21,20 @@ namespace Avalonia.IconPacks.ViewModels
         }
         void loadAllIcons()
         {
+            loadIcons("resm:Avalonia.IconPacks.Icons.VSImageLib.xaml?assembly=Avalonia.IconPacks");
+            loadIcons("resm:Avalonia.IconPacks.Icons.Material.xaml?assembly=Avalonia.IconPacks");
+            loadIcons("resm:Avalonia.IconPacks.Icons.MaterialLight.xaml?assembly=Avalonia.IconPacks");
+            loadIcons("resm:Avalonia.IconPacks.Icons.FontAwesome.xaml?assembly=Avalonia.IconPacks");
+            loadIcons("resm:Avalonia.IconPacks.Icons.Octicons.xaml?assembly=Avalonia.IconPacks");
+            loadIcons("resm:Avalonia.IconPacks.Icons.Modern.xaml?assembly=Avalonia.IconPacks");
+            loadIcons("resm:Avalonia.IconPacks.Icons.Entypo+.xaml?assembly=Avalonia.IconPacks");
+            loadIcons("resm:Avalonia.IconPacks.Icons.SimpleIcons.xaml?assembly=Avalonia.IconPacks");
+
+        }
+        void loadIcons(string resource)
+        { 
             var assetLocator = AvaloniaLocator.Current.GetService<IAssetLoader>();
-            using (var stream = assetLocator.Open(new System.Uri("resm:Avalonia.IconPacks.Icons.VSImageLib.xaml?assembly=Avalonia.IconPacks")))
+            using (var stream = assetLocator.Open(new System.Uri(resource)))
             {
                 XmlDocument resDoc = new XmlDocument();
                 using (XmlTextReader tr = new XmlTextReader(stream))
@@ -32,6 +44,10 @@ namespace Avalonia.IconPacks.ViewModels
                 }
                 foreach(XmlElement drawing in resDoc.SelectNodes("//Style.Resources/DrawingGroup"))
                 {                   
+                    Icons.Add(new IconVM() { parent = this, Name = drawing.Attributes["x:Key"].InnerText, SourceCode = drawing.OuterXml });
+                }
+                foreach (XmlElement drawing in resDoc.SelectNodes("//Style.Resources/GeometryDrawing"))
+                {
                     Icons.Add(new IconVM() { parent = this, Name = drawing.Attributes["x:Key"].InnerText, SourceCode = drawing.OuterXml });
                 }
             }

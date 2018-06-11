@@ -12,11 +12,13 @@ namespace Avalonia.IconPacks.ViewModels
         public string SourceCode { get; set; }
         public MainViewModel parent { get; set; }
 
+        Drawing _drawing;
         public Drawing drawing
         {
             get
             {
-                return (Drawing)parent.window.FindResource(Name);
+                if(_drawing==null)_drawing= (Drawing)parent.window.FindResource(Name);
+                return _drawing;
             }
         }
     }

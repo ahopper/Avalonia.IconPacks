@@ -4,5 +4,12 @@
         <StyleInclude Source="resm:Avalonia.Themes.Default.DefaultTheme.xaml?assembly=Avalonia.Themes.Default"/>
         <StyleInclude Source="resm:Avalonia.Themes.Default.Accents.BaseLight.xaml?assembly=Avalonia.Themes.Default"/>
         <StyleInclude Source="resm:Avalonia.IconPacks.Icons.VSImageLib.xaml"/>
+        <StyleInclude Source="resm:Avalonia.IconPacks.Icons.Material.xaml"/>
+        <StyleInclude Source="resm:Avalonia.IconPacks.Icons.MaterialLight.xaml"/>
+        <StyleInclude Source="resm:Avalonia.IconPacks.Icons.FontAwesome.xaml"/>
+        <StyleInclude Source="resm:Avalonia.IconPacks.Icons.Octicons.xaml"/>
+        <StyleInclude Source="resm:Avalonia.IconPacks.Icons.Modern.xaml"/>
+        <StyleInclude Source="resm:Avalonia.IconPacks.Icons.Entypo+.xaml"/>
+        <StyleInclude Source="resm:Avalonia.IconPacks.Icons.SimpleIcons.xaml"/>
     </Application.Styles>
 </Application>
