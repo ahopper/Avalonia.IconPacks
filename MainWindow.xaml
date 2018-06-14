@@ -1,10 +1,15 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Avalonia.IconPacks"
         Title="Avalonia.IconPacks" >
   <Grid ColumnDefinitions="600,*">
     <TextBox AcceptsReturn="True" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Text="{Binding StyleSourceCode}"/>
     <ListBox Grid.Column="0" Items="{Binding Icons}" VirtualizationMode="Simple" SelectedItem="{Binding SelectedIcon}" >
-      
+      <ListBox.ItemsPanel>
+        <ItemsPanelTemplate>
+          <local:VirtualizingWrapPanel Width="550" />        
+        </ItemsPanelTemplate>
+      </ListBox.ItemsPanel>
       <ListBox.ItemTemplate>
         <DataTemplate>
           <Border Width="32" Height="32" ToolTip.Tip="{Binding Name}">
