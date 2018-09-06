@@ -91,6 +91,11 @@ namespace Avalonia.IconPacks
 
         protected override Size MeasureOverride(Size availableSize)
         {
+            if(availableSize.Width==double.PositiveInfinity)
+            {
+                availableSize=new Size(5,availableSize.Height);
+            }
+
             if (_forceRemeasure || availableSize != ((ILayoutable)this).PreviousMeasure)
             {
                 _forceRemeasure = false;
@@ -270,7 +275,7 @@ namespace Avalonia.IconPacks
                 {
                     _takenSpace -= height + gap;
                     _lineLengths.RemoveAt(_lineLengths.Count - 1);
-                    _takenLineSpace = _lineLengths.Last();
+                    _takenLineSpace = _lineLengths.Count>0 ?_lineLengths.Last():0;
                 }
                 else
                 {

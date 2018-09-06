@@ -3,21 +3,23 @@ using Avalonia.Platform;
 using ReactiveUI;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Xml;
-using System.Xml.Linq;
+
 
 namespace Avalonia.IconPacks.ViewModels
 {
     public class MainViewModel:ReactiveObject
     {
         public List<IconVM> Icons{ get; set; } = new List<IconVM>();
+        public List<IconVM> _FilteredIcons;
         public Window window { get; set; }
         private string _StyleSourceCode = "";
-       
+        private string _SearchText = "";
+      
         public MainViewModel()
         {
             loadAllIcons();
+            FilteredIcons = Icons;
         }
         void loadAllIcons()
         {
@@ -29,7 +31,7 @@ namespace Avalonia.IconPacks.ViewModels
             loadIcons("resm:Avalonia.IconPacks.Icons.Modern.xaml?assembly=Avalonia.IconPacks");
             loadIcons("resm:Avalonia.IconPacks.Icons.Entypo+.xaml?assembly=Avalonia.IconPacks");
             loadIcons("resm:Avalonia.IconPacks.Icons.SimpleIcons.xaml?assembly=Avalonia.IconPacks");
-
+            
         }
         void loadIcons(string resource)
         { 
@@ -51,7 +53,7 @@ namespace Avalonia.IconPacks.ViewModels
                     Icons.Add(new IconVM() { parent = this, Name = drawing.Attributes["x:Key"].InnerText, SourceCode = drawing.OuterXml });
                 }
             }
-        }
+        }       
         public string StyleSourceCode
         {
             get
@@ -62,6 +64,30 @@ namespace Avalonia.IconPacks.ViewModels
             {
                 this.RaiseAndSetIfChanged(ref _StyleSourceCode, value);
                 
+            }
+        }
+        public List<IconVM> FilteredIcons
+        {
+            get
+            {
+                return _FilteredIcons;
+            }
+            set
+            {
+                this.RaiseAndSetIfChanged(ref _FilteredIcons, value);
+
+            }
+        }
+        public string SearchText
+        {
+            get
+            {
+                return _SearchText;
+            }
+            set
+            {
+                this.RaiseAndSetIfChanged(ref _SearchText, value);
+
             }
         }
         public IconVM SelectedIcon
@@ -77,7 +103,26 @@ namespace Avalonia.IconPacks.ViewModels
         }
         public void AddToStyle(IconVM icon)
         {
-            if(icon!=null) StyleSourceCode += "\r\n" + icon.SourceCode;
+             if (icon != null) StyleSourceCode += "\r\n" + icon.SourceCode;
+        }
+        public void Search()
+        {
+            if (SearchText == "")
+            {
+                FilteredIcons = Icons;
+            }
+            else
+            {
+                FilteredIcons = Icons.FindAll(x => x.Name.Contains(SearchText, StringComparison.OrdinalIgnoreCase));
+            }
+        }
+        
+    }
+    static class StringUtils
+    {
+        public static bool Contains(this string source, string toCheck, StringComparison comp)
+        {
+            return source != null && toCheck != null && source.IndexOf(toCheck, comp) >= 0;
         }
     }
 }

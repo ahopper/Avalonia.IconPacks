@@ -2,21 +2,31 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:Avalonia.IconPacks"
         Title="Avalonia.IconPacks" >
-  <Grid ColumnDefinitions="600,*">
-    <TextBox AcceptsReturn="True" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Text="{Binding StyleSourceCode}"/>
-    <ListBox Grid.Column="0" Items="{Binding Icons}" VirtualizationMode="Simple" SelectedItem="{Binding SelectedIcon}" >
+
+  <Grid RowDefinitions="32,*,auto,300">
+    <StackPanel Orientation="Horizontal">
+      <TextBox Width="200" Text="{Binding SearchText}"></TextBox>
+      <Button Width="32" Height="32" Command="{Binding Search}">
+        <Grid>
+        <DrawingPresenter Drawing="{StaticResource VSImageLib.Search_16x}"/>
+        </Grid>
+      </Button>
+    </StackPanel>
+    <ListBox HorizontalAlignment="Stretch" Grid.Row="1" Items="{Binding FilteredIcons}"  VirtualizationMode="Simple" SelectedItem="{Binding SelectedIcon}"  >
       <ListBox.ItemsPanel>
         <ItemsPanelTemplate>
-          <local:VirtualizingWrapPanel Width="550" />        
+          <local:VirtualizingWrapPanel Width="{Binding $parent[3].Bounds.Width}" Height="{Binding $parent[3].Bounds.Height}" />
         </ItemsPanelTemplate>
       </ListBox.ItemsPanel>
       <ListBox.ItemTemplate>
         <DataTemplate>
-          <Border Width="32" Height="32" ToolTip.Tip="{Binding Name}">
-            <DrawingPresenter Drawing="{Binding drawing}"/>
+          <Border Width="32" Height="32" Margin="4">
+            <DrawingPresenter  Drawing="{Binding drawing}"/>
           </Border>
         </DataTemplate>
       </ListBox.ItemTemplate>
     </ListBox>
-	</Grid>
+    <GridSplitter Height="4" Grid.Row="2" />
+    <TextBox AcceptsReturn="True" Grid.Row="3"  Text="{Binding StyleSourceCode}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+  </Grid>
 </Window>
