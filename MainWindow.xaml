@@ -7,9 +7,7 @@
     <StackPanel Orientation="Horizontal">
       <TextBox Width="200" Text="{Binding SearchText}"></TextBox>
       <Button Width="32" Height="32" Command="{Binding Search}">
-        <Grid>
-        <DrawingPresenter Drawing="{StaticResource VSImageLib.Search_16x}"/>
-        </Grid>
+        <DrawingPresenter Drawing="{DynamicResource VSImageLib.Search_16x}"/>
       </Button>
     </StackPanel>
     <ListBox HorizontalAlignment="Stretch" Grid.Row="1" Items="{Binding FilteredIcons}"  VirtualizationMode="Simple" SelectedItem="{Binding SelectedIcon}"  >
@@ -20,9 +18,7 @@
       </ListBox.ItemsPanel>
       <ListBox.ItemTemplate>
         <DataTemplate>
-          <Border Width="32" Height="32" Margin="4">
-            <DrawingPresenter  Drawing="{Binding drawing}"/>
-          </Border>
+            <DrawingPresenter Width="32" Height="32" Margin="4" Drawing="{Binding drawing}"/>
         </DataTemplate>
       </ListBox.ItemTemplate>
     </ListBox>
