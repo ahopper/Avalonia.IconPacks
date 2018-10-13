@@ -19,9 +19,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.6.2-build6217-beta" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.6.2-build6217-beta" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="0.6.2-build6217-beta" />
+    <PackageReference Include="Avalonia" Version="0.6.2-build6379-beta" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.6.2-build6379-beta" />
+    <PackageReference Include="Avalonia.Native" Version="0.7.0-build4201810121" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.6.2-build6379-beta" />
   </ItemGroup>
   <ItemGroup>
     <None Update="Icons\BuildVSImageLib.tt">

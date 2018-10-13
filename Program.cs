@@ -1,6 +1,8 @@
 ﻿using System;
 using Avalonia;
 using Avalonia.Logging.Serilog;
+using Avalonia.Platform;
+using Avalonia.Shared.PlatformSupport;
 
 namespace Avalonia.IconPacks
 {
@@ -12,9 +14,18 @@ namespace Avalonia.IconPacks
         }
 
         public static AppBuilder BuildAvaloniaApp()
-            => AppBuilder.Configure<App>()
-                .UsePlatformDetect()
-                .UseReactiveUI()
-                .LogToDebug();
+        {
+            var result = AppBuilder.Configure<App>();
+
+            if (result.RuntimePlatform.GetRuntimeInfo().OperatingSystem == OperatingSystemType.OSX)
+            {
+                result.UseAvaloniaNative().UseSkia();
+            }
+            else
+            {
+                result.UsePlatformDetect();
+            }
+            return result;
+        }
     }
 }
