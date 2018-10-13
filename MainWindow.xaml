@@ -1,7 +1,9 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:Avalonia.IconPacks"
-        Title="Avalonia.IconPacks" >
+        Title="Avalonia.IconPacks" 
+        Width="800"
+        Height="600">
 
   <Grid RowDefinitions="32,*,auto,300">
     <StackPanel Orientation="Horizontal">
