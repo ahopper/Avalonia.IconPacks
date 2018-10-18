@@ -11,5 +11,7 @@
         <StyleInclude Source="resm:Avalonia.IconPacks.Icons.Modern.xaml"/>
         <StyleInclude Source="resm:Avalonia.IconPacks.Icons.Entypo+.xaml"/>
         <StyleInclude Source="resm:Avalonia.IconPacks.Icons.SimpleIcons.xaml"/>
+        <StyleInclude Source="resm:Avalonia.IconPacks.Icons.WeatherIcons.xaml"/>
+        <StyleInclude Source="resm:Avalonia.IconPacks.Icons.Typicons.xaml"/>
     </Application.Styles>
 </Application>

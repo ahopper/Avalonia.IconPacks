@@ -31,7 +31,9 @@ namespace Avalonia.IconPacks.ViewModels
             loadIcons("resm:Avalonia.IconPacks.Icons.Modern.xaml?assembly=Avalonia.IconPacks");
             loadIcons("resm:Avalonia.IconPacks.Icons.Entypo+.xaml?assembly=Avalonia.IconPacks");
             loadIcons("resm:Avalonia.IconPacks.Icons.SimpleIcons.xaml?assembly=Avalonia.IconPacks");
-            
+            loadIcons("resm:Avalonia.IconPacks.Icons.WeatherIcons.xaml?assembly=Avalonia.IconPacks");
+            loadIcons("resm:Avalonia.IconPacks.Icons.Typicons.xaml?assembly=Avalonia.IconPacks");
+
         }
         void loadIcons(string resource)
         { 
