@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.IconPacks", "Avalonia.IconPacks.csproj", "{D965F4FC-4460-4F5B-9B3E-1BA7BF9BCBCC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroIconPackExport", "MetroIconPackExport\MetroIconPackExport.csproj", "{ED1E6FDD-C104-4C38-86F6-6BD943842714}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroIconPackExport", "MetroIconPackExport.csproj", "{ED1E6FDD-C104-4C38-86F6-6BD943842714}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D965F4FC-4460-4F5B-9B3E-1BA7BF9BCBCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D965F4FC-4460-4F5B-9B3E-1BA7BF9BCBCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D965F4FC-4460-4F5B-9B3E-1BA7BF9BCBCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D965F4FC-4460-4F5B-9B3E-1BA7BF9BCBCC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ED1E6FDD-C104-4C38-86F6-6BD943842714}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ED1E6FDD-C104-4C38-86F6-6BD943842714}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED1E6FDD-C104-4C38-86F6-6BD943842714}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -26,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {336F6E93-5F0A-4323-90E5-957588B387EB}
+		SolutionGuid = {D4181CF3-534E-41BB-82C8-B7A453771862}
 	EndGlobalSection
 EndGlobal
