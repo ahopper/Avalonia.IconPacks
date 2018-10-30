@@ -25,6 +25,7 @@ namespace Avalonia.IconPacks.ViewModels
         {
             loadIcons("resm:Avalonia.IconPacks.Icons.VSImageLib.xaml?assembly=Avalonia.IconPacks");
             loadIcons("resm:Avalonia.IconPacks.Icons.Material.xaml?assembly=Avalonia.IconPacks");
+            loadIcons("resm:Avalonia.IconPacks.Icons.MaterialDesign.xaml?assembly=Avalonia.IconPacks");
             loadIcons("resm:Avalonia.IconPacks.Icons.MaterialLight.xaml?assembly=Avalonia.IconPacks");
             loadIcons("resm:Avalonia.IconPacks.Icons.FontAwesome.xaml?assembly=Avalonia.IconPacks");
             loadIcons("resm:Avalonia.IconPacks.Icons.Octicons.xaml?assembly=Avalonia.IconPacks");
@@ -33,7 +34,9 @@ namespace Avalonia.IconPacks.ViewModels
             loadIcons("resm:Avalonia.IconPacks.Icons.SimpleIcons.xaml?assembly=Avalonia.IconPacks");
             loadIcons("resm:Avalonia.IconPacks.Icons.WeatherIcons.xaml?assembly=Avalonia.IconPacks");
             loadIcons("resm:Avalonia.IconPacks.Icons.Typicons.xaml?assembly=Avalonia.IconPacks");
-
+            loadIcons("resm:Avalonia.IconPacks.Icons.FeatherIcons.xaml?assembly=Avalonia.IconPacks");
+            loadIcons("resm:Avalonia.IconPacks.Icons.Ionicons.xaml?assembly=Avalonia.IconPacks");
+      
         }
         void loadIcons(string resource)
         { 

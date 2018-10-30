@@ -18,6 +18,7 @@ namespace MetroIconPackExport
         void exportIcons()
         {
             exportIconPack("Material", new PackIconMaterial());
+            exportIconPack("MaterialDesign", new PackIconMaterialDesign());
             exportIconPack("MaterialLight", new PackIconMaterialLight());
             exportIconPack("FontAwesome", new PackIconFontAwesome());
             exportIconPack("Octicons", new PackIconOcticons());
@@ -26,8 +27,10 @@ namespace MetroIconPackExport
             exportIconPack("SimpleIcons", new PackIconSimpleIcons());
             exportIconPack("WeatherIcons", new PackIconWeatherIcons());
             exportIconPack("Typicons", new PackIconTypicons());
+            exportIconPack("FeatherIcons", new PackIconFeatherIcons());
+            exportIconPack("Ionicons", new PackIconIonicons());
         }
-  
+
         void exportIconPack<P>(string title, PackIconControl<P> pack) where P:Enum
         {
             //TODO use proper xml writer
@@ -45,8 +48,10 @@ namespace MetroIconPackExport
                     var name = icon.ToString();
                     pack.Kind = (P)icon;
                     var data = pack.Data;
-
-                    file.WriteLine($"            <GeometryDrawing x:Key=\"{title}.{name}\" Brush=\"#FF000000\" Geometry=\"{data}\"/>");
+                    if (!String.IsNullOrEmpty(data))
+                    {
+                        file.WriteLine($"            <GeometryDrawing x:Key=\"{title}.{name}\" Brush=\"#FF000000\" Geometry=\"{data}\"/>");
+                    }
                 }
                 file.WriteLine("        </Style.Resources>");
                 file.WriteLine("    </Style>");

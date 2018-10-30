@@ -22,10 +22,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.7.0-build382-beta" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.7.0-build382-beta" />
-    <PackageReference Include="Avalonia.Native" Version="0.7.0-build4201810121" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="0.7.0-build382-beta" />
+    <PackageReference Include="Avalonia" Version="0.7.0-build434-beta" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.7.0-build434-beta" />
+    <PackageReference Include="Avalonia.Native" Version="0.7.0-build434-beta" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.7.0-build434-beta" />
   </ItemGroup>
   <ItemGroup>
     <None Update="Icons\BuildVSImageLib.tt">
@@ -36,6 +36,15 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>BuildVSImageLib.tt</DependentUpon>
+    </None>
+    <None Update="Icons\FeatherIcons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Icons\Ionicons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Icons\MaterialDesign.xaml">
+      <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Icons\VSImageLib.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

@@ -5,6 +5,7 @@
         <StyleInclude Source="resm:Avalonia.Themes.Default.Accents.BaseLight.xaml?assembly=Avalonia.Themes.Default"/>
         <StyleInclude Source="resm:Avalonia.IconPacks.Icons.VSImageLib.xaml"/>
         <StyleInclude Source="resm:Avalonia.IconPacks.Icons.Material.xaml"/>
+        <StyleInclude Source="resm:Avalonia.IconPacks.Icons.MaterialDesign.xaml"/>
         <StyleInclude Source="resm:Avalonia.IconPacks.Icons.MaterialLight.xaml"/>
         <StyleInclude Source="resm:Avalonia.IconPacks.Icons.FontAwesome.xaml"/>
         <StyleInclude Source="resm:Avalonia.IconPacks.Icons.Octicons.xaml"/>
@@ -13,5 +14,7 @@
         <StyleInclude Source="resm:Avalonia.IconPacks.Icons.SimpleIcons.xaml"/>
         <StyleInclude Source="resm:Avalonia.IconPacks.Icons.WeatherIcons.xaml"/>
         <StyleInclude Source="resm:Avalonia.IconPacks.Icons.Typicons.xaml"/>
+        <StyleInclude Source="resm:Avalonia.IconPacks.Icons.FeatherIcons.xaml"/>
+        <StyleInclude Source="resm:Avalonia.IconPacks.Icons.Ionicons.xaml"/>
     </Application.Styles>
 </Application>
