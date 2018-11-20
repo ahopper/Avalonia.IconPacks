@@ -4,7 +4,7 @@
         Title="Avalonia.IconPacks" 
         Width="800"
         Height="600">
-
+ 
   <Grid RowDefinitions="32,*,auto,300">
     <StackPanel Orientation="Horizontal">
       <TextBox Width="200" Text="{Binding SearchText}"></TextBox>
@@ -12,10 +12,12 @@
         <DrawingPresenter Drawing="{DynamicResource VSImageLib.Search_16x}"/>
       </Button>
     </StackPanel>
-    <ListBox HorizontalAlignment="Stretch" Grid.Row="1" Items="{Binding FilteredIcons}"  VirtualizationMode="Simple" SelectedItem="{Binding SelectedIcon}"  >
+    <ListBox HorizontalAlignment="Stretch" Grid.Row="1" Items="{Binding FilteredIcons}"  
+             VirtualizationMode="Simple" SelectedItem="{Binding SelectedIcon}"
+             ScrollViewer.HorizontalScrollBarVisibility="Disabled">
       <ListBox.ItemsPanel>
         <ItemsPanelTemplate>
-          <local:VirtualizingWrapPanel Width="{Binding $parent[3].Bounds.Width}" Height="{Binding $parent[3].Bounds.Height}" />
+          <local:VirtualizingWrapPanel Height="{Binding $parent[ListBox].Bounds.Height}" />
         </ItemsPanelTemplate>
       </ListBox.ItemsPanel>
       <ListBox.ItemTemplate>
