@@ -3,6 +3,7 @@ using Avalonia.Platform;
 using ReactiveUI;
 using System;
 using System.Collections.Generic;
+using System.Reactive.Linq;
 using System.Xml;
 
 
@@ -19,7 +20,11 @@ namespace Avalonia.IconPacks.ViewModels
         public MainViewModel()
         {
             loadAllIcons();
-            FilteredIcons = Icons;
+         
+            this.WhenAnyValue(x => x.SearchText)
+                .Throttle(TimeSpan.FromMilliseconds(200))
+                .Subscribe(_ => Search());
+           
         }
         void loadAllIcons()
         {
