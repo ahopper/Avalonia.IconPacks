@@ -41,6 +41,7 @@ namespace Avalonia.IconPacks.ViewModels
             loadIcons("resm:Avalonia.IconPacks.Icons.Typicons.xaml?assembly=Avalonia.IconPacks");
             loadIcons("resm:Avalonia.IconPacks.Icons.FeatherIcons.xaml?assembly=Avalonia.IconPacks");
             loadIcons("resm:Avalonia.IconPacks.Icons.Ionicons.xaml?assembly=Avalonia.IconPacks");
+            loadIcons("resm:Avalonia.IconPacks.Icons.JamIcons.xaml?assembly=Avalonia.IconPacks");
         }
         void loadIcons(string resource)
         { 

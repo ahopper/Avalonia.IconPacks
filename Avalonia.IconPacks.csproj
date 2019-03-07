@@ -91,6 +91,15 @@
     <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0088\lib\uap10.0\MahApps.Metro.IconPacks\Themes\PackIconWeatherIcons.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0103\lib\uap10.0\MahApps.Metro.IconPacks.Core\Converter\Converters.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0103\lib\uap10.0\MahApps.Metro.IconPacks\Themes\PackIconEntypo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0103\lib\uap10.0\MahApps.Metro.IconPacks\Themes\PackIconMaterial.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />

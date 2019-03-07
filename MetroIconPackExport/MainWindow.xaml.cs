@@ -31,6 +31,7 @@ namespace MetroIconPackExport
             exportIconPack("Typicons", new PackIconTypicons(),true);
             exportIconPack("FeatherIcons", new PackIconFeatherIcons());
             exportIconPack("Ionicons", new PackIconIonicons());
+            exportIconPack("JamIcons", new PackIconJamIcons(),true);
         }
 
         void exportIconPack<P>(string title, PackIconControl<P> pack, bool invert=false) where P:Enum
