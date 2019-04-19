@@ -45,6 +45,9 @@
     <None Update="Icons\MaterialDesign.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <None Update="Icons\Unicons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
     <None Update="Icons\VSImageLib.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>VSImageLib.xaml</LastGenOutput>
@@ -98,6 +101,108 @@
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0103\lib\uap10.0\MahApps.Metro.IconPacks\Themes\PackIconMaterial.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0.17763\MahApps.Metro.IconPacks.Core\Converter\Converters.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0.17763\MahApps.Metro.IconPacks\Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0.17763\MahApps.Metro.IconPacks\Themes\IconPacks.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0.17763\MahApps.Metro.IconPacks\Themes\PackIconEntypo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0.17763\MahApps.Metro.IconPacks\Themes\PackIconFeatherIcons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0.17763\MahApps.Metro.IconPacks\Themes\PackIconFontAwesome.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0.17763\MahApps.Metro.IconPacks\Themes\PackIconIonicons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0.17763\MahApps.Metro.IconPacks\Themes\PackIconJamIcons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0.17763\MahApps.Metro.IconPacks\Themes\PackIconMaterial.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0.17763\MahApps.Metro.IconPacks\Themes\PackIconMaterialDesign.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0.17763\MahApps.Metro.IconPacks\Themes\PackIconMaterialLight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0.17763\MahApps.Metro.IconPacks\Themes\PackIconModern.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0.17763\MahApps.Metro.IconPacks\Themes\PackIconOcticons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0.17763\MahApps.Metro.IconPacks\Themes\PackIconSimpleIcons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0.17763\MahApps.Metro.IconPacks\Themes\PackIconTypicons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0.17763\MahApps.Metro.IconPacks\Themes\PackIconUnicons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0.17763\MahApps.Metro.IconPacks\Themes\PackIconWeatherIcons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0\MahApps.Metro.IconPacks.Core\Converter\Converters.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0\MahApps.Metro.IconPacks\Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0\MahApps.Metro.IconPacks\Themes\IconPacks.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0\MahApps.Metro.IconPacks\Themes\PackIconEntypo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0\MahApps.Metro.IconPacks\Themes\PackIconFeatherIcons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0\MahApps.Metro.IconPacks\Themes\PackIconFontAwesome.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0\MahApps.Metro.IconPacks\Themes\PackIconIonicons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0\MahApps.Metro.IconPacks\Themes\PackIconJamIcons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0\MahApps.Metro.IconPacks\Themes\PackIconMaterial.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0\MahApps.Metro.IconPacks\Themes\PackIconMaterialDesign.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0\MahApps.Metro.IconPacks\Themes\PackIconMaterialLight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0\MahApps.Metro.IconPacks\Themes\PackIconModern.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0\MahApps.Metro.IconPacks\Themes\PackIconOcticons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0\MahApps.Metro.IconPacks\Themes\PackIconSimpleIcons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0\MahApps.Metro.IconPacks\Themes\PackIconTypicons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0\MahApps.Metro.IconPacks\Themes\PackIconUnicons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="packages\MahApps.Metro.IconPacks.3.0.0-alpha0141\lib\uap10.0\MahApps.Metro.IconPacks\Themes\PackIconWeatherIcons.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
   </ItemGroup>

@@ -23,6 +23,7 @@ namespace Avalonia.IconPacks.ViewModels
          
             this.WhenAnyValue(x => x.SearchText)
                 .Throttle(TimeSpan.FromMilliseconds(200))
+                .ObserveOn(RxApp.MainThreadScheduler)
                 .Subscribe(_ => Search());
            
         }
@@ -42,6 +43,7 @@ namespace Avalonia.IconPacks.ViewModels
             loadIcons("resm:Avalonia.IconPacks.Icons.FeatherIcons.xaml?assembly=Avalonia.IconPacks");
             loadIcons("resm:Avalonia.IconPacks.Icons.Ionicons.xaml?assembly=Avalonia.IconPacks");
             loadIcons("resm:Avalonia.IconPacks.Icons.JamIcons.xaml?assembly=Avalonia.IconPacks");
+            loadIcons("resm:Avalonia.IconPacks.Icons.Unicons.xaml?assembly=Avalonia.IconPacks");
         }
         void loadIcons(string resource)
         { 

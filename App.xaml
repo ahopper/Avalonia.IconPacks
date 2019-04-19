@@ -17,5 +17,6 @@
         <StyleInclude Source="resm:Avalonia.IconPacks.Icons.FeatherIcons.xaml"/>
         <StyleInclude Source="resm:Avalonia.IconPacks.Icons.Ionicons.xaml"/>
         <StyleInclude Source="resm:Avalonia.IconPacks.Icons.JamIcons.xaml"/>
+        <StyleInclude Source="resm:Avalonia.IconPacks.Icons.Unicons.xaml"/>
     </Application.Styles>
 </Application>
