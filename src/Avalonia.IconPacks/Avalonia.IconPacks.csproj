@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFrameworks>netcoreapp2.0</TargetFrameworks>
+  </PropertyGroup>
+  <ItemGroup>
+     <Compile Update="**\*.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <AvaloniaResource Include="**\*.xaml">
+      <SubType>Designer</SubType>
+    </AvaloniaResource>
+  </ItemGroup> 
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="0.8.1-cibuild0002718-beta" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.8.1-cibuild0002718-beta" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.8.1-cibuild0002718-beta" />
+<!--
+    <PackageReference Include="Avalonia" Version="0.8.0" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.8.0" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.8.0" />
+  -->
+    </ItemGroup>
+ 
+    <ItemGroup>
+      <AvaloniaResource Remove="Icons\*.xaml" />
+      <None Update="Icons\*.xaml">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+    <ItemGroup> 
+    <None Update="Icons\BuildVSImageLib.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BuildVSImageLib.xaml</LastGenOutput>
+    </None> 
+     
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+</Project>

@@ -39,7 +39,7 @@ namespace MetroIconPackExport
         void exportIconPack<P>(string title, PackIconControl<P> pack, bool invert=false) where P:Enum
         {
             //TODO use proper xml writer
-            using (var file = File.CreateText($"..\\..\\..\\Icons\\{title}.xaml"))
+            using (var file = File.CreateText($"..\\..\\..\\Avalonia.IconPacks\\Icons\\{title}.xaml"))
             {
                 file.WriteLine("<Styles xmlns=\"https://github.com/avaloniaui\"");
                 file.WriteLine("    xmlns:x = \"http://schemas.microsoft.com/winfx/2006/xaml\" >");
