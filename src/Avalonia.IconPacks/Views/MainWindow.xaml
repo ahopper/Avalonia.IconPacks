@@ -6,20 +6,22 @@
         Width="800"
         Height="600">
  
-  <Grid RowDefinitions="32,*,auto,auto,300">
-    <StackPanel Orientation="Horizontal" Spacing="8">
+  <Grid RowDefinitions="32,*,auto,auto,300" >
+    <StackPanel Orientation="Horizontal" Spacing="8" >
       <TextBox Width="200" Text="{Binding SearchText}" Watermark="Search"></TextBox>
-      <TextBlock Text="Found "/>
-      <TextBlock Text="{Binding FilteredIcons.Count}"/>
+      <TextBlock Text="Found " VerticalAlignment="Center"/>
+      <TextBlock Text="{Binding FilteredIcons.Count}" VerticalAlignment="Center"/>
       <!-- <Button Width="32" Height="32" Command="{Binding Search}">
          <DrawingPresenter Drawing="{DynamicResource VSImageLib.Search_16x}"/>
       </Button>-->
 
       <!--   <Slider Name="iconsize" Minimum="16" Maximum="128" Value="32" Width="100"/>-->
+      
+      
     </StackPanel>
-    <!--  
+     
     <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled">
-      <ItemsRepeater HorizontalAlignment="Stretch"  Items="{Binding FilteredIcons}"   >
+      <ItemsRepeater HorizontalAlignment="Stretch"  Items="{Binding FilteredIcons}" >
         <ItemsRepeater.Styles>
           <Style Selector="Button">
             <Setter Property="Background" Value="Transparent"/>
@@ -32,14 +34,14 @@
         <ItemsRepeater.ItemTemplate>
           <DataTemplate>
             <Button Command="{Binding $parent[ItemsRepeater].DataContext.AddToStyle}" CommandParameter="{Binding}">
-            <DrawingPresenter Margin="4" Drawing="{Binding drawing}"/>
+              <DrawingPresenter Margin="0" Drawing="{Binding drawing}"/>
             </Button>
           </DataTemplate>
         </ItemsRepeater.ItemTemplate>
       </ItemsRepeater>
     </ScrollViewer>
-   -->
    
+   <!--
     <ListBox HorizontalAlignment="Stretch" Grid.Row="1" Items="{Binding FilteredIcons}"  
              VirtualizationMode="Simple" SelectedItem="{Binding SelectedIcon}"
              ScrollViewer.HorizontalScrollBarVisibility="Disabled">
@@ -54,7 +56,7 @@
         </DataTemplate>
       </ListBox.ItemTemplate>
     </ListBox>
-     
+     -->
     <GridSplitter Height="4" Grid.Row="2" />
    
     <ItemsControl Grid.Row="3" Items="{Binding SelectedIcons}" >
