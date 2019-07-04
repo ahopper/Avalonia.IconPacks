@@ -15,7 +15,7 @@
          <DrawingPresenter Drawing="{DynamicResource VSImageLib.Search_16x}"/>
       </Button>-->
 
-      <!--   <Slider Name="iconsize" Minimum="16" Maximum="128" Value="32" Width="100"/>-->
+      <Slider Name="iconsize" Minimum="32" Maximum="128" Value="48" Width="100"/>
       
       
     </StackPanel>
@@ -29,7 +29,7 @@
           </Style>
         </ItemsRepeater.Styles>
         <ItemsRepeater.Layout>
-          <UniformGridLayout MinItemWidth="32" MinItemHeight="32"  />
+          <UniformGridLayout MinItemWidth="{Binding #iconsize.Value}" MinItemHeight="{Binding #iconsize.Value}"  />
         </ItemsRepeater.Layout>
         <ItemsRepeater.ItemTemplate>
           <DataTemplate>
