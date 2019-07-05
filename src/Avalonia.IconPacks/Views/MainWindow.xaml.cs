@@ -3,6 +3,7 @@ using Avalonia.Controls;
 using Avalonia.IconPacks.ViewModels;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform;
+using System;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -16,6 +17,17 @@ namespace Avalonia.IconPacks.Views
 #if DEBUG
             this.AttachDevTools();
 #endif         
+        }
+
+        private void IconTapped(object sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            if (e.Source is Control source)
+            {                
+                if (source.DataContext is IconVM icon)
+                {
+                    ((MainViewModel)DataContext).AddToStyle(icon);
+                }
+            }
         }
 
         private void InitializeComponent()

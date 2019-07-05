@@ -11,52 +11,25 @@
       <TextBox Width="200" Text="{Binding SearchText}" Watermark="Search"></TextBox>
       <TextBlock Text="Found " VerticalAlignment="Center"/>
       <TextBlock Text="{Binding FilteredIcons.Count}" VerticalAlignment="Center"/>
-      <!-- <Button Width="32" Height="32" Command="{Binding Search}">
-         <DrawingPresenter Drawing="{DynamicResource VSImageLib.Search_16x}"/>
-      </Button>-->
-
-      <Slider Name="iconsize" Minimum="32" Maximum="128" Value="48" Width="100"/>
-      
-      
+      <Slider Name="iconsize" Minimum="32" Maximum="256" Value="48" Width="100"/>
     </StackPanel>
      
-    <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled">
-      <ItemsRepeater HorizontalAlignment="Stretch"  Items="{Binding FilteredIcons}" >
-        <ItemsRepeater.Styles>
-          <Style Selector="Button">
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderBrush" Value="Transparent"/>
-          </Style>
-        </ItemsRepeater.Styles>
+    <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" >
+      <ItemsRepeater HorizontalAlignment="Stretch" Items="{Binding FilteredIcons}" Tapped="IconTapped">
+        
         <ItemsRepeater.Layout>
           <UniformGridLayout MinItemWidth="{Binding #iconsize.Value}" MinItemHeight="{Binding #iconsize.Value}"  />
         </ItemsRepeater.Layout>
         <ItemsRepeater.ItemTemplate>
           <DataTemplate>
-            <Button Command="{Binding $parent[ItemsRepeater].DataContext.AddToStyle}" CommandParameter="{Binding}">
-              <DrawingPresenter Margin="0" Drawing="{Binding drawing}"/>
-            </Button>
+             <Panel Background="White">
+              <DrawingPresenter Margin="4" Drawing="{Binding drawing}" />
+            </Panel>
           </DataTemplate>
         </ItemsRepeater.ItemTemplate>
       </ItemsRepeater>
     </ScrollViewer>
-   
-   <!--
-    <ListBox HorizontalAlignment="Stretch" Grid.Row="1" Items="{Binding FilteredIcons}"  
-             VirtualizationMode="Simple" SelectedItem="{Binding SelectedIcon}"
-             ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-      <ListBox.ItemsPanel>
-        <ItemsPanelTemplate>
-          <local:VirtualizingWrapPanel Height="{Binding $parent[ListBox].Bounds.Height}" />
-        </ItemsPanelTemplate>
-      </ListBox.ItemsPanel>
-      <ListBox.ItemTemplate>
-        <DataTemplate>
-            <DrawingPresenter Width="32" Height="32" Margin="4" Drawing="{Binding drawing}"/>
-        </DataTemplate>
-      </ListBox.ItemTemplate>
-    </ListBox>
-     -->
+ 
     <GridSplitter Height="4" Grid.Row="2" />
    
     <ItemsControl Grid.Row="3" Items="{Binding SelectedIcons}" >
