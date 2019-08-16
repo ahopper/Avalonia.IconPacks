@@ -16,7 +16,6 @@
      
     <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" >
       <ItemsRepeater HorizontalAlignment="Stretch" Items="{Binding FilteredIcons}" Tapped="IconTapped">
-        
         <ItemsRepeater.Layout>
           <UniformGridLayout MinItemWidth="{Binding #iconsize.Value}" MinItemHeight="{Binding #iconsize.Value}"  />
         </ItemsRepeater.Layout>

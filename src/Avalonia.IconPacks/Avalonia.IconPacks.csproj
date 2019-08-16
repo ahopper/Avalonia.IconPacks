@@ -12,15 +12,10 @@
     </AvaloniaResource>
   </ItemGroup> 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.8.1-cibuild0003118-beta" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.8.1-cibuild0003118-beta" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="0.8.1-cibuild0003118-beta" />
-<!--
-    <PackageReference Include="Avalonia" Version="0.8.0" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.8.0" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="0.8.0" />
-  -->
-    </ItemGroup>
+    <PackageReference Include="Avalonia" Version="0.8.999-cibuild0003548-beta" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.8.999-cibuild0003548-beta" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.8.999-cibuild0003548-beta" />
+  </ItemGroup>
  
     <ItemGroup>
       <AvaloniaResource Remove="Icons\*.xaml" />
