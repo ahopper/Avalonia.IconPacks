@@ -34,6 +34,7 @@ namespace MetroIconPackExport
             exportIconPack("JamIcons", new PackIconJamIcons(),true);
             exportIconPack("Unicons", new PackIconUnicons());
             exportIconPack("Zondicons", new PackIconZondicons());
+            exportIconPack("EvaIcons", new PackIconEvaIcons());
 
         }
 

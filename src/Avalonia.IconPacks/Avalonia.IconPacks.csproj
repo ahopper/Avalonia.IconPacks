@@ -31,6 +31,9 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BuildVSImageLib.xaml</LastGenOutput>
     </None> 
+    <None Update="Icons\EvaIcons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None> 
     <None Update="Icons\Zondicons.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None> 
