@@ -1,5 +1,5 @@
 # Avalonia.IconPacks
-Import of Visual Studio image library and MahApps.Metro.IconPacks for Avalonia
+Import of more than 18,000 vector icons from the Visual Studio image library and [MahApps.Metro.IconPacks](https://github.com/MahApps/MahApps.Metro.IconPacks) for use in [Avalonia](https://github.com/AvaloniaUI/Avalonia)
 
 To use the icons either copy the files from the Icons directory to your project or run Avalonia.IconPacks to browse and generate a file of just the icons you want.
 
@@ -30,5 +30,7 @@ To do this you typically include the icon file in App.xaml
 </Application.Styles>
 ```
 
-![Avalonis.IconPacks](iconpacks.png)
+![Avalonia.IconPacks](iconpacks.png)
+
+If you find this project useful please go and star the [MahApps.Metro.IconPacks](https://github.com/MahApps/MahApps.Metro.IconPacks) project as that is where all the hard work has been done.
 
