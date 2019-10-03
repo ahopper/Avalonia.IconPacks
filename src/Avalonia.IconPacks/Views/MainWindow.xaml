@@ -22,7 +22,7 @@
         <ItemsRepeater.ItemTemplate>
           <DataTemplate>
              <Panel Background="White">
-              <DrawingPresenter Margin="4" Drawing="{Binding drawing}" />
+              <DrawingPresenter Margin="4" Drawing="{Binding Drawing}" />
             </Panel>
           </DataTemplate>
         </ItemsRepeater.ItemTemplate>
@@ -39,12 +39,14 @@
       </ItemsControl.ItemsPanel>
       <ItemsControl.ItemTemplate>
         <DataTemplate>
-            <DrawingPresenter Width="48" Height="48"  Margin="4" Drawing="{Binding drawing}"/>
+            <DrawingPresenter Width="48" Height="48"  Margin="4" Drawing="{Binding Drawing}"/>
         </DataTemplate>
       </ItemsControl.ItemTemplate>
     </ItemsControl>
     
     <TextBox AcceptsReturn="True" Grid.Row="4" Text="{Binding StyleSourceCode}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+    
+    
     
   </Grid>
 </Window>

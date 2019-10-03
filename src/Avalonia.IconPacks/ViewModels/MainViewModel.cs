@@ -17,15 +17,17 @@ namespace Avalonia.IconPacks.ViewModels
 {
     public class MainViewModel:ViewModelBase
     {
-        public List<IconVM> Icons{ get; set; } = new List<IconVM>();
-        public List<IconVM> _FilteredIcons;
+        private List<IconVM> Icons{ get; set; } = new List<IconVM>();
+        private List<IconVM> _FilteredIcons;
         private string _StyleSourceCode = "";
         private string _SearchText = "";
         public ObservableCollection<IconVM> SelectedIcons { get; set; } = new ObservableCollection<IconVM>();
 
         public MainViewModel()
         {
+            
             loadAllIcons();
+            _FilteredIcons = Icons;
          
             this.WhenAnyValue(x => x.SearchText)
                 .Throttle(TimeSpan.FromMilliseconds(200))
@@ -63,24 +65,22 @@ namespace Avalonia.IconPacks.ViewModels
                     
                     if (tag == "GeometryDrawing" || tag == "DrawingGroup")
                     {
-                        XElement el = XNode.ReadFrom(reader) as XElement;
-                        if (el != null)
+                        if(XNode.ReadFrom(reader) is XElement el)
                         {
                             try
                             {
                                 var s = el.Name;
                                 if (tag == "GeometryDrawing")
                                 {
-                                    output.Add(new IconVM()
-                                    {
-                                        Name = el.Attribute(nsx + "Key").Value,
-                                        drawing = new GeometryDrawing()
+                                    output.Add(new IconVM(
+                                        name : el.Attribute(nsx + "Key").Value,
+                                        sourceCode : el.ToString(),
+                                        drawing : new GeometryDrawing()
                                         {
                                             Brush = Brush.Parse(el.Attribute("Brush").Value),
                                             Geometry = Geometry.Parse(el.Attribute("Geometry").Value)
-                                        },
-                                        SourceCode = el.ToString()
-                                    });
+                                        }                                       
+                                    ));
                                 }
                                 else
                                 {
@@ -97,88 +97,23 @@ namespace Avalonia.IconPacks.ViewModels
                                         }
                                     }
                                     
-                                    output.Add(new IconVM()
-                                    {
-                                        Name = el.Attribute(nsx + "Key").Value,
-                                        SourceCode = el.ToString(),
-                                        drawing = drawing
-                                    });
+                                    output.Add(new IconVM(
+                                        name : el.Attribute(nsx + "Key").Value,
+                                        sourceCode : el.ToString(),
+                                        drawing : drawing
+                                    ));
                                 }
                             }
                             catch (Exception)
                             {
-                            //    StyleSourceCode += "Error parsing icon\r\n" + el.ToString();
+                                Console.WriteLine($"Error parsing icon {el.ToString()}");
                             }
                         }
                     }
                 }
             }
         }
-
-        private void loadIconsOld(Stream stream, IList<IconVM> output)
-        {
-            // crude deserializer
-            // todo try using XamlIl for this
-            // can't easily read source and elements at once with XmlReader :(
-            XmlReader reader = XmlReader.Create(stream);
-
-            reader.MoveToContent();
-            while (reader.Read())
-            {
-                if (reader.NodeType == XmlNodeType.Element)
-                {
-                    if (reader.Name == "GeometryDrawing")
-                    {
-
-                        var icon = new IconVM();
-                        var drawing = new GeometryDrawing();
-                        while (reader.MoveToNextAttribute())
-                        {
-                            switch (reader.Name)
-                            {
-                                case "Brush": drawing.Brush = Brush.Parse(reader.Value); break;
-                                case "Geometry": drawing.Geometry = Geometry.Parse(reader.Value); break;
-                                case "x:Key": icon.Name = reader.Value; break;
-                            }
-                        }
-                        icon.drawing = drawing;
-                        output.Add(icon);
-                    }
-                    else if (reader.Name == "DrawingGroup")
-                    {
-                        var icon = new IconVM();
-                        var drawingGroup = new DrawingGroup();
-                        while (reader.MoveToNextAttribute())
-                        {
-                            switch (reader.Name)
-                            {
-                                case "x:Key": icon.Name = reader.Value; break;
-                            }
-                        }
-                        do
-                        {
-                            reader.Read();
-                            if (reader.Name == "GeometryDrawing")
-                            {
-                                var drawing = new GeometryDrawing();
-                                while (reader.MoveToNextAttribute())
-                                {
-                                    switch (reader.Name)
-                                    {
-                                        case "Brush": drawing.Brush = Brush.Parse(reader.Value); break;
-                                        case "Geometry": drawing.Geometry = Geometry.Parse(reader.Value); break;
-                                    }
-                                }
-                                drawingGroup.Children.Add(drawing);
-                            }
-                        } while (reader.NodeType != XmlNodeType.EndElement);
-                        icon.drawing = drawingGroup;
-                        output.Add(icon);
-                    }
-                }
-            }
-        }
-
+        
         public string StyleSourceCode
         {
             get
@@ -188,7 +123,6 @@ namespace Avalonia.IconPacks.ViewModels
             set
             {
                 this.RaiseAndSetIfChanged(ref _StyleSourceCode, value);
-                
             }
         }
         public List<IconVM> FilteredIcons
@@ -200,7 +134,6 @@ namespace Avalonia.IconPacks.ViewModels
             set
             {
                 this.RaiseAndSetIfChanged(ref _FilteredIcons, value);
-
             }
         }
         public string SearchText
@@ -212,31 +145,19 @@ namespace Avalonia.IconPacks.ViewModels
             set
             {
                 this.RaiseAndSetIfChanged(ref _SearchText, value);
-
             }
         }
-        public IconVM SelectedIcon
-        {
-            get
-            {
-                return null;
-            }
-            set
-            {
-                AddToStyle(value);
-            }
-        }
-        public void AddToStyle(IconVM icon)
+       
+        public void AddToStyle(IconVM? icon)
         {
             if (icon != null)
             {
                 var source = icon.SourceCode.Replace("p1:", "x:")
                    .Replace("xmlns:p1=\"http://schemas.microsoft.com/winfx/2006/xaml\"", "")
                    .Replace("xmlns=\"https://github.com/avaloniaui\"", "")
-                   .Replace("\t", "  "); ;
+                   .Replace("\t", "  ");
 
                 StyleSourceCode += "\r\n" +source;
-               // SelectedIcons.Add(icon);
             }
         }
         public void CreateSelectedIcons()

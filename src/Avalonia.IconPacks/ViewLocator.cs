@@ -11,17 +11,18 @@ namespace Avalonia.IconPacks
 
         public IControl Build(object data)
         {
-            var name = data.GetType().FullName.Replace("ViewModel", "View");
-            var type = Type.GetType(name);
-
-            if (type != null)
+            var typeName = data.GetType().FullName;
+            if (typeName?.Replace("ViewModel", "View") is string name )
             {
-                return (Control)Activator.CreateInstance(type);
+                if(Type.GetType(name) is Type type)
+                {
+                    if(Activator.CreateInstance(type) is Control control)
+                    {
+                        return control;
+                    }
+                }
             }
-            else
-            {
-                return new TextBlock { Text = "Not Found: " + name };
-            }
+            return new TextBlock { Text = $"View Not Found For: { typeName ?? data.GetType().Name }" };
         }
 
         public bool Match(object data)
