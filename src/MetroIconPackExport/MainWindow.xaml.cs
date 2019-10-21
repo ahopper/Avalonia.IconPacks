@@ -1,5 +1,6 @@
 ﻿using MahApps.Metro.IconPacks;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows;
 using System.Windows.Markup;
@@ -19,27 +20,29 @@ namespace MetroIconPackExport
         }
         void exportIcons()
         {
-            exportIconPack("Material", new PackIconMaterial());
-            exportIconPack("MaterialDesign", new PackIconMaterialDesign(),true);
-            exportIconPack("MaterialLight", new PackIconMaterialLight());
-            exportIconPack("FontAwesome", new PackIconFontAwesome());
-            exportIconPack("Octicons", new PackIconOcticons());
-            exportIconPack("Modern", new PackIconModern());
-            exportIconPack("Entypo+", new PackIconEntypo());
-            exportIconPack("SimpleIcons", new PackIconSimpleIcons());
-            exportIconPack("WeatherIcons", new PackIconWeatherIcons());
-            exportIconPack("Typicons", new PackIconTypicons(),true);
-            exportIconPack("FeatherIcons", new PackIconFeatherIcons());
-            exportIconPack("Ionicons", new PackIconIonicons());
-            exportIconPack("JamIcons", new PackIconJamIcons(),true);
-            exportIconPack("Unicons", new PackIconUnicons());
-            exportIconPack("Zondicons", new PackIconZondicons());
-            exportIconPack("EvaIcons", new PackIconEvaIcons());
-            exportIconPack("BoxIcons", new PackIconBoxIcons(),true);
-
+            exportIconPack<PackIconMaterialKind>("Material", PackIconMaterialDataFactory.Create());
+            exportIconPack<PackIconMaterialDesignKind>("MaterialDesign", PackIconMaterialDesignDataFactory.Create(),true);
+            exportIconPack<PackIconMaterialLightKind>("MaterialLight", PackIconMaterialLightDataFactory.Create());
+            exportIconPack<PackIconFontAwesomeKind>("FontAwesome", PackIconFontAwesomeDataFactory.Create());
+            exportIconPack<PackIconOcticonsKind>("Octicons", PackIconOcticonsDataFactory.Create());
+            exportIconPack<PackIconModernKind>("Modern", PackIconModernDataFactory.Create());
+            exportIconPack<PackIconEntypoKind>("Entypo+", PackIconEntypoDataFactory.Create());
+            exportIconPack<PackIconSimpleIconsKind>("SimpleIcons", PackIconSimpleIconsDataFactory.Create());
+            exportIconPack<PackIconWeatherIconsKind>("WeatherIcons", PackIconWeatherIconsDataFactory.Create());
+            exportIconPack<PackIconTypiconsKind>("Typicons", PackIconTypiconsDataFactory.Create(),true);
+            exportIconPack<PackIconFeatherIconsKind>("FeatherIcons", PackIconFeatherIconsDataFactory.Create());
+            exportIconPack<PackIconIoniconsKind>("Ionicons", PackIconIoniconsDataFactory.Create());
+            exportIconPack<PackIconJamIconsKind>("JamIcons", PackIconJamIconsDataFactory.Create(),true);
+            exportIconPack<PackIconUniconsKind>("Unicons", PackIconUniconsDataFactory.Create());
+            exportIconPack<PackIconZondiconsKind>("Zondicons", PackIconZondiconsDataFactory.Create());
+            exportIconPack<PackIconEvaIconsKind>("EvaIcons", PackIconEvaIconsDataFactory.Create(),true);
+            exportIconPack<PackIconBoxIconsKind>("BoxIcons", PackIconBoxIconsDataFactory.Create(),true);
+            exportIconPack<PackIconPicolIconsKind>("PicolIcons", PackIconPicolIconsDataFactory.Create());
+            exportIconPack<PackIconRPGAwesomeKind>("RPGAwesome", PackIconRPGAwesomeDataFactory.Create(),true);
+            
         }
 
-        void exportIconPack<P>(string title, PackIconControl<P> pack, bool invert=false) where P:Enum
+        void exportIconPack<P>(string title, IDictionary<P, string> pack, bool invert = false) where P : Enum
         {
             //TODO use proper xml writer
             using (var file = File.CreateText($"..\\..\\..\\Avalonia.IconPacks\\Icons\\{title}.xaml"))
@@ -54,8 +57,8 @@ namespace MetroIconPackExport
                 foreach (var icon in icons)
                 {
                     var name = icon.ToString();
-                    pack.Kind = (P)icon;
-                    var data = pack.Data;
+                    
+                    var data = pack[(P)icon];
                     if (invert)
                     {
                         data = invertPath(data);
