@@ -39,7 +39,8 @@ namespace MetroIconPackExport
             exportIconPack<PackIconBoxIconsKind>("BoxIcons", PackIconBoxIconsDataFactory.Create(),true);
             exportIconPack<PackIconPicolIconsKind>("PicolIcons", PackIconPicolIconsDataFactory.Create());
             exportIconPack<PackIconRPGAwesomeKind>("RPGAwesome", PackIconRPGAwesomeDataFactory.Create(),true);
-            
+            exportIconPack<PackIconMicronsKind>("Microns", PackIconMicronsDataFactory.Create());
+
         }
 
         void exportIconPack<P>(string title, IDictionary<P, string> pack, bool invert = false) where P : Enum
