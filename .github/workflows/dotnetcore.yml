@@ -18,5 +18,22 @@ jobs:
     - name: Archive build artifacts
       uses: actions/upload-artifact@v1
       with:
-          name: build
-          path: src/Avalonia.IconPacks/bin/Release/netcoreapp3.1
+        name: build
+        path: src/Avalonia.IconPacks/bin/Release/netcoreapp3.1
+
+  publishwin:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.100
+    - name: Publish with dotnet
+      run: dotnet publish ./src/Avalonia.IconPacks/Avalonia.IconPacks.csproj -r win-x64 -c release -f netcoreapp3.1 /p:PublishTrimmed=true
+    - name: Archive publish artifacts
+      uses: actions/upload-artifact@v1
+      with:
+        name: winx64_release
+        path: src/Avalonia.IconPacks/bin/Release/netcoreapp3.1/win-x64/publish
