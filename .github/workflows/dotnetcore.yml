@@ -15,3 +15,8 @@ jobs:
         dotnet-version: 3.1.100
     - name: Build with dotnet
       run: dotnet build ./src/Avalonia.IconPacks/Avalonia.IconPacks.csproj --configuration Release
+    - name: Archive build artifacts
+      uses: actions/upload-artifact@v1
+      with:
+          name: build
+          path: src/Avalonia.IconPacks/bin/Release/netcoreapp3.1
