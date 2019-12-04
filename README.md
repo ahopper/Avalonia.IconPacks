@@ -1,4 +1,7 @@
 # Avalonia.IconPacks
+
+![](https://github.com/ahopper/Avalonia.IconPacks/workflows/.NET%20Core/badge.svg)
+
 Import of more than 21,000 vector icons from the Visual Studio image library and [MahApps.Metro.IconPacks](https://github.com/MahApps/MahApps.Metro.IconPacks) for use in [Avalonia](https://github.com/AvaloniaUI/Avalonia)
 
 To use the icons either copy the files from the Icons directory to your project or run Avalonia.IconPacks to browse and generate a file of just the icons you want.
