@@ -5,6 +5,7 @@ using System.IO;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Media;
+using System.Xml;
 
 namespace MetroIconPackExport
 {
@@ -41,6 +42,8 @@ namespace MetroIconPackExport
             exportIconPack<PackIconRPGAwesomeKind>("RPGAwesome", PackIconRPGAwesomeDataFactory.Create(),true);
             exportIconPack<PackIconMicronsKind>("Microns", PackIconMicronsDataFactory.Create());
 
+            ExportFromSVG("VSCodeDark", "E:\\downloads\\vscode-icons-master\\vscode-icons-master\\icons\\dark");
+            ExportFromSVG("VSCodeLight", "E:\\downloads\\vscode-icons-master\\vscode-icons-master\\icons\\light");
         }
 
         void exportIconPack<P>(string title, IDictionary<P, string> pack, bool invert = false) where P : Enum
@@ -73,6 +76,53 @@ namespace MetroIconPackExport
                 file.WriteLine("    </Style>");
                 file.WriteLine("</Styles>");
             }
+        }
+        private void ExportFromSVG(string title, string path)
+        {
+            using (var file = File.CreateText($"..\\..\\..\\Avalonia.IconPacks\\Icons\\{title}.xaml"))
+            {
+                file.WriteLine("<Styles xmlns=\"https://github.com/avaloniaui\"");
+                file.WriteLine("    xmlns:x = \"http://schemas.microsoft.com/winfx/2006/xaml\" >");
+                file.WriteLine("    <Style>");
+                file.WriteLine("        <Style.Resources>");
+
+
+                foreach (var svgpath in Directory.EnumerateFiles(path, "*.svg", SearchOption.AllDirectories))
+                {
+                    try
+                    {
+                        XmlDocument drawingDoc = new XmlDocument();
+                        using (XmlTextReader tr = new XmlTextReader(svgpath))
+                        {
+                            tr.Namespaces = false;
+                            drawingDoc.Load(tr);
+                        }
+                        var name = Path.GetFileNameWithoutExtension(svgpath);
+                        var dgChildren = drawingDoc.DocumentElement.GetElementsByTagName("path");
+                        if (dgChildren.Count == 1)
+                        {
+                            file.WriteLine($"            <GeometryDrawing x:Key=\"{title}.{name}\" Brush=\"{dgChildren[0].Attributes["fill"].Value}\" Geometry=\"{dgChildren[0].Attributes["d"].Value}\"/>");
+                        }
+                        else
+                        {
+                            file.WriteLine($"            <DrawingGroup x:Key=\"{title}.{name}\" >");
+                            foreach (XmlElement dp in dgChildren)
+                            {
+                                file.WriteLine($"              <GeometryDrawing Brush=\"{dp.Attributes["fill"].Value}\" Geometry=\"{dp.Attributes["d"].Value}\"/>");
+                            }
+                            file.WriteLine($"            </DrawingGroup>");
+                        }
+                    }
+                    catch (Exception e)
+                    {
+
+                    }
+                }
+                file.WriteLine("        </Style.Resources>");
+                file.WriteLine("    </Style>");
+                file.WriteLine("</Styles>");
+            }
+ 
         }
         string invertPath(string path)
         {
