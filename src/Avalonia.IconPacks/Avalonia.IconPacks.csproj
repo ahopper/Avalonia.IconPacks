@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFrameworks>netcoreapp3.0</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.1</TargetFrameworks>
     
     <LangVersion>8.0</LangVersion>
     <Nullable>enable</Nullable>
@@ -16,9 +16,9 @@
     </AvaloniaResource>
   </ItemGroup> 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.9.0-preview7" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.9.0-preview7" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="0.9.0-preview7" />
+    <PackageReference Include="Avalonia" Version="0.9.0-preview9" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.9.0-preview9" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.9.0-preview9" />
   </ItemGroup>
  
     <ItemGroup>
