@@ -14,10 +14,29 @@
     <AvaloniaResource Include="**\*.xaml">
       <SubType>Designer</SubType>
     </AvaloniaResource>
-  </ItemGroup> 
+  </ItemGroup>
+
+  <PropertyGroup Condition="'$(PublishWin)' == 'True'">
+    <DefineConstants>$(DefineConstants);PUBLISHWIN</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(PublishLinux)' == 'True'">
+    <DefineConstants>$(DefineConstants);PUBLISHLINUX</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(PublishOsx)' == 'True'">
+    <DefineConstants>$(DefineConstants);PUBLISHOSX</DefineConstants>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="0.9.0" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.9.0" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.9.0" Condition="'$(PublishWin)'!='True' AND '$(PublishLinux)'!='True' AND '$(PublishOsx)'!='True'" />
+
+    <PackageReference Include="Avalonia.Skia" Version="0.9.0" Condition="'$(PublishWin)'=='True' OR '$(PublishLinux)'=='True' OR '$(PublishOsx)'=='True'" />
+    <PackageReference Include="Avalonia.Win32" Version="0.9.0" Condition="'$(PublishWin)' == 'True' " />
+    <PackageReference Include="Avalonia.X11" Version="0.9.0" Condition="'$(PublishLinux)' == 'True' " />
+    <PackageReference Include="Avalonia.Native" Version="0.9.0" Condition="'$(PublishOsx)' == 'True' " />
+
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.9.0" />
   </ItemGroup>
  
@@ -31,9 +50,6 @@
       <EmbeddedResource Remove="Icons\*.xaml" />
     </ItemGroup>
     <ItemGroup> 
-    <None Update="Icons\AvaloniaIcons.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None> 
     <None Update="Icons\BuildVSImageLib.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BuildVSImageLib.xaml</LastGenOutput>

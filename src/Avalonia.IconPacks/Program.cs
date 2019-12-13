@@ -20,11 +20,34 @@ namespace Avalonia.IconPacks
         }
         // Avalonia configuration, don't remove; also used by visual designer.
         public static AppBuilder BuildAvaloniaApp()
-            => AppBuilder.Configure<App>()
+        {
+
+#if PUBLISHWIN
+            var builder = AppBuilder.Configure<App>()
+                .UseWin32()
+                .UseReactiveUI()
+                .UseSkia()
+                .LogToDebug();
+#elif PUBLISHLINUX
+            var builder = AppBuilder.Configure<App>()
+                .UseX11()
+                .UseReactiveUI()
+                .UseSkia()
+                .LogToDebug();
+#elif PUBLISHOSX
+            var builder = AppBuilder.Configure<App>()
+                .UseAvaloniaNative()
+                .UseReactiveUI()
+                .UseSkia()
+                .LogToDebug();
+#else
+            var builder = AppBuilder.Configure<App>()
                 .UsePlatformDetect()
                 .UseReactiveUI()
+                .UseSkia()
                 .LogToDebug();
-
-        
+#endif
+            return builder;
+        }
     }
 }
