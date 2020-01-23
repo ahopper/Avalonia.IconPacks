@@ -18,14 +18,17 @@ using System.Xml.Serialization;
 
 namespace Avalonia.IconPacks.ViewModels
 {
+        
     public class MainViewModel:ViewModelBase
     {
         private List<IconVM> Icons{ get; set; } = new List<IconVM>();
         private List<IconVM> _FilteredIcons;
         private string _StyleSourceCode = "";
         private string _SearchText = "";
+        public enum OutputFormats { Drawing, DrawingImage };
+        private OutputFormats _OutputFormat = OutputFormats.Drawing;
+        public static OutputFormats[] OutputFormatValues { get; } =(OutputFormats[]) Enum.GetValues(typeof(OutputFormats) );
         public ObservableCollection<IconVM> SelectedIcons { get; set; } = new ObservableCollection<IconVM>();
-
         public MainViewModel()
         {
             
@@ -105,7 +108,17 @@ namespace Avalonia.IconPacks.ViewModels
                 this.RaiseAndSetIfChanged(ref _SearchText, value);
             }
         }
-       
+        public OutputFormats OutputFormat
+        {
+            get
+            {
+                return _OutputFormat;
+            }
+            set
+            {
+                this.RaiseAndSetIfChanged(ref _OutputFormat, value);
+            }
+        }
         public void AddToStyle(IconVM? icon)
         {
             if (icon != null)
@@ -113,6 +126,16 @@ namespace Avalonia.IconPacks.ViewModels
                 var source = icon.SourceCode.Replace("xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"", "")
                    .Replace("xmlns=\"https://github.com/avaloniaui\"", "")
                    .Replace("\t", "  ");
+                switch(OutputFormat)
+                {
+                    case OutputFormats.Drawing:
+                        
+                        break;
+                    case OutputFormats.DrawingImage:
+                        var key = $"x:Key=\"{icon.Name}\"";
+                        source = $"<DrawingImage {key}>\r\n  {source.Replace(key, "")}\r\n</DrawingImage>";
+                        break;
+                }
 
                 StyleSourceCode += "\r\n" +source;
             }

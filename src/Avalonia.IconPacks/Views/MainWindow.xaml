@@ -1,6 +1,7 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:Avalonia.IconPacks"
+        xmlns:vm="clr-namespace:Avalonia.IconPacks.ViewModels"
         x:Class="Avalonia.IconPacks.Views.MainWindow"
         Title="Avalonia.IconPacks" 
         Width="800"
@@ -12,6 +13,8 @@
       <TextBlock Text="Found " VerticalAlignment="Center"/>
       <TextBlock Text="{Binding FilteredIcons.Count}" VerticalAlignment="Center"/>
       <Slider Name="iconsize" Minimum="32" Maximum="256" Value="48" Width="100"/>
+      <TextBlock Text="Icon Format" VerticalAlignment="Center"/>
+      <DropDown Items="{x:Static vm:MainViewModel.OutputFormatValues}" SelectedItem="{Binding OutputFormat, Mode=TwoWay}"/>
     </StackPanel>
      
     <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" >
