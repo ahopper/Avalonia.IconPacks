@@ -1,5 +1,6 @@
 ﻿using System;
 using Avalonia;
+using Avalonia.Dialogs;
 using Avalonia.IconPacks.Views;
 using Avalonia.Logging.Serilog;
 using Avalonia.Platform;
@@ -33,6 +34,7 @@ namespace Avalonia.IconPacks
                 .UseX11()
                 .UseReactiveUI()
                 .UseSkia()
+                .UseManagedSystemDialogs()
                 .LogToDebug();
 #elif PUBLISHOSX
             var builder = AppBuilder.Configure<App>()

@@ -1,11 +1,10 @@
-﻿using Avalonia.Controls;
-using Avalonia.IconPacks.Parsers;
+﻿using Avalonia.IconPacks.Parsers;
+using Avalonia.IconPacks.Utils;
 using Avalonia.Media;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
-using System.Xml;
+
 
 namespace Avalonia.IconPacks.ViewModels
 {
@@ -60,6 +59,17 @@ namespace Avalonia.IconPacks.ViewModels
                 }
             }
             return "";
+        }
+        public void SaveAsIcon(string filename)
+        {
+            if (filename != null)
+            {
+                switch (Path.GetExtension(filename))
+                {
+                    case ".ico": IconFile.SaveToICO(Drawing, new List<int> { 16, 32, 64, 256 }, filename); break;
+                    case ".icns": IconFile.SaveToICNS(Drawing, new List<int> { 16, 32, 64, 256, 512 }, filename); break;
+                }
+            }
         }
     }
 }
