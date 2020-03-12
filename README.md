@@ -6,6 +6,8 @@ Import of more than 21,000 vector icons from the Visual Studio image library, [V
 
 To use the icons either copy the files from the Icons directory to your project or run Avalonia.IconPacks to browse and generate a file of just the icons you want.
 
+Pre built binaries for windows,linux and osx can be downloaded from the [Actions page](https://github.com/ahopper/Avalonia.IconPacks/actions)
+
 You can use the icon code directly in xaml
 ```
 <Button>
@@ -32,6 +34,9 @@ To do this you typically include the icon file in App.xaml
       <StyleInclude Source="avares://MyProject/Icons/Icons.xaml"/>
 </Application.Styles>
 ```
+
+There is a useful tool [here](https://gist.github.com/dfkeenan/d5ce7ba64f796e41cd9202b416c994bd) to transform the colors of the vs studio icons to match different themes. 
+The Iconpacks program loads icons at startup from the icons directory so external icons can be added just by copying xaml files to that directory. 
 
 ![Avalonia.IconPacks](iconpacks.png)
 
