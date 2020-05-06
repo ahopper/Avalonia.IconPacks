@@ -26,7 +26,7 @@
         <ItemsRepeater.ItemTemplate>
           <DataTemplate>
              <Panel Background="White">
-              <DrawingPresenter Margin="4" Drawing="{Binding Drawing}" />
+              <DrawingPresenter Margin="4" Drawing="{Binding Drawing}" ClipToBounds="True" />
             </Panel>
           </DataTemplate>
         </ItemsRepeater.ItemTemplate>
