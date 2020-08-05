@@ -1,0 +1,84 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.IO" #>
+<#@ assembly name="System.Xml" #>
+<#@ import namespace="System.Xml" #>
+<#@ output extension=".xaml" #>
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style>
+        <Style.Resources>
+<#
+string failed="";
+List<string> passed=new List<string>();
+foreach(var path in Directory.EnumerateFiles("E:\\downloads\\VS2019 Image Library","*.xaml",SearchOption.AllDirectories ))
+{
+	try
+	{
+		XmlDocument drawingDoc=new XmlDocument();
+		using (XmlTextReader tr = new XmlTextReader(path))
+		{
+			tr.Namespaces = false;
+			drawingDoc.Load(tr);
+		}
+		var dgChildren=drawingDoc.DocumentElement.GetElementsByTagName("DrawingGroup.Children");
+
+		if(dgChildren.Count>0)
+		{
+		if(((XmlElement)dgChildren[0]).GetElementsByTagName("Pen").Count>0 ||
+			((XmlElement)dgChildren[0]).GetElementsByTagName("RadialGradientBrush").Count>0 ||
+			((XmlElement)dgChildren[0]).GetElementsByTagName("LinearGradientBrush").Count>0)
+			{
+				failed+=path+"\r\n";
+				continue;
+			}
+			string key="VSImageLib2019."+Path.GetFileNameWithoutExtension(path);
+			passed.Add(key);
+#>
+				<DrawingGroup x:Key="<#=key#>">
+					<#= dgChildren[0].InnerXml #>
+				</DrawingGroup>
+<#
+		}
+		else failed+=path+"\r\n";
+	}
+	catch(Exception e)
+	{
+	#>
+	<!--T4 Exception <#= e.Message#> <#= path#>-->
+	<#
+	}
+}
+#>
+
+		  </Style.Resources>
+    </Style>
+</Styles>
+<!-- Failed Icons
+<#=failed#>
+-->
+<#
+    TemplateHelper.WriteTemplateOutputToFile("VSImageLib2019.xaml", Host, GenerationEnvironment);
+    GenerationEnvironment = new System.Text.StringBuilder();
+#>
+
+
+<#+
+
+// from http://stackoverflow.com/questions/2223421/t4-template-to-create-multiple-html-for-example-output-files-per-table-from
+public class TemplateHelper
+{
+    public static void WriteTemplateOutputToFile(
+        string relativeOutputFilePath,
+        Microsoft.VisualStudio.TextTemplating.ITextTemplatingEngineHost Host,
+        System.Text.StringBuilder GenerationEnvironment)
+    {
+        string outputPath = System.IO.Path.GetDirectoryName(Host.TemplateFile);
+        string outputFilePath = Host.ResolvePath(relativeOutputFilePath);
+        System.IO.File.WriteAllText(outputFilePath, GenerationEnvironment.ToString());
+    }
+}
+#>

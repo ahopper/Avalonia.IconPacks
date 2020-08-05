@@ -50,10 +50,15 @@
       <EmbeddedResource Remove="Icons\*.xaml" />
     </ItemGroup>
     <ItemGroup> 
+    <None Update="Icons\BuildVSImageLib2019.tt">
+      <LastGenOutput>BuildVSImageLib2019.xaml</LastGenOutput>
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None> 
     <None Update="Icons\BuildVSImageLib.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BuildVSImageLib.xaml</LastGenOutput>
     </None> 
+    
      
   </ItemGroup>
   <ItemGroup>
