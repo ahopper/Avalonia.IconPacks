@@ -68,6 +68,7 @@ namespace Avalonia.IconPacks.ViewModels
                 {
                     case ".ico": IconFile.SaveToICO(Drawing, new List<int> { 16, 32, 64, 256 }, filename); break;
                     case ".icns": IconFile.SaveToICNS(Drawing, new List<int> { 16, 32, 64, 256, 512 }, filename); break;
+                    case ".png": IconFile.SaveToPNG(Drawing, 400, filename); break;
                 }
             }
         }

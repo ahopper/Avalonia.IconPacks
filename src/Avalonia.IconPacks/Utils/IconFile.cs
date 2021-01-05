@@ -115,6 +115,13 @@ namespace Avalonia.IconPacks.Utils
                 }
             }
         }
+        static public void SaveToPNG(Drawing drawing, int size, string filename)
+        {
+            using (var icoFile = File.Create(filename))
+            {
+                SaveDrawing(drawing, size, icoFile);
+            }
+        }
 
         static void SaveDrawing(Drawing drawing,int size, Stream pngStream)
         { 
