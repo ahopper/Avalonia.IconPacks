@@ -2,7 +2,6 @@
 using Avalonia;
 using Avalonia.Dialogs;
 using Avalonia.IconPacks.Views;
-using Avalonia.Logging.Serilog;
 using Avalonia.Platform;
 using Avalonia.ReactiveUI;
 using Avalonia.Shared.PlatformSupport;
@@ -27,27 +26,23 @@ namespace Avalonia.IconPacks
             var builder = AppBuilder.Configure<App>()
                 .UseWin32()
                 .UseReactiveUI()
-                .UseSkia()
-                .LogToDebug();
+                .UseSkia();
 #elif PUBLISHLINUX
             var builder = AppBuilder.Configure<App>()
                 .UseX11()
                 .UseReactiveUI()
                 .UseSkia()
-                .UseManagedSystemDialogs()
-                .LogToDebug();
+                .UseManagedSystemDialogs();
 #elif PUBLISHOSX
             var builder = AppBuilder.Configure<App>()
                 .UseAvaloniaNative()
                 .UseReactiveUI()
-                .UseSkia()
-                .LogToDebug();
+                .UseSkia();
 #else
             var builder = AppBuilder.Configure<App>()
                 .UsePlatformDetect()
                 .UseReactiveUI()
-                .UseSkia()
-                .LogToDebug();
+                .UseSkia();
 #endif
             return builder;
         }

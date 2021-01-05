@@ -167,13 +167,7 @@ namespace Avalonia.IconPacks.Parsers
         {
 
             var drawingGroup = new DrawingGroup();
-            while (reader.MoveToNextAttribute())
-            {
-                switch (reader.Name)
-                {
-                    //      case "x:Key": key = reader.Value; break;
-                }
-            }
+            
             reader.MoveToElement();
             reader = reader.ReadSubtree();
             while (reader.Read())

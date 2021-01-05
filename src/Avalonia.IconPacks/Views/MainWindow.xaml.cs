@@ -25,7 +25,7 @@ namespace Avalonia.IconPacks.Views
             {                
                 if (source.DataContext is IconVM icon)
                 {
-                    ((MainViewModel)DataContext).AddToStyle(icon);
+                    (DataContext as MainViewModel)?.AddToStyle(icon);
                 }
             }
         }
