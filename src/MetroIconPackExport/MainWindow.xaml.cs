@@ -42,6 +42,17 @@ namespace MetroIconPackExport
             exportIconPack<PackIconRPGAwesomeKind>("RPGAwesome", PackIconRPGAwesomeDataFactory.Create(),true);
             exportIconPack<PackIconMicronsKind>("Microns", PackIconMicronsDataFactory.Create());
 
+            exportIconPack<PackIconBootstrapIconsKind>("Bootstrap", PackIconBootstrapIconsDataFactory.Create(),true);
+            exportIconPack<PackIconCodiconsKind>("Codeicons", PackIconCodiconsDataFactory.Create(), true);
+            exportIconPack<PackIconFileIconsKind>("FileIcons", PackIconFileIconsDataFactory.Create(), true);
+            exportIconPack<PackIconFontaudioKind>("Fontaudio", PackIconFontaudioDataFactory.Create(), true);
+            exportIconPack<PackIconForkAwesomeKind>("ForkAwesome", PackIconForkAwesomeDataFactory.Create(), true);
+            exportIconPack<PackIconPixelartIconsKind>("Pixelart", PackIconPixelartIconsDataFactory.Create());
+            exportIconPack<PackIconRadixIconsKind>("Radix", PackIconRadixIconsDataFactory.Create(), true);
+            exportIconPack<PackIconRemixIconKind>("Remix", PackIconRemixIconDataFactory.Create(), true);
+            exportIconPack<PackIconVaadinIconsKind>("Vaadin", PackIconVaadinIconsDataFactory.Create(), true);
+            
+
             ExportFromSVG("VSCodeDark", "E:\\downloads\\vscode-icons-master\\vscode-icons-master\\icons\\dark");
             ExportFromSVG("VSCodeLight", "E:\\downloads\\vscode-icons-master\\vscode-icons-master\\icons\\light");
         }
