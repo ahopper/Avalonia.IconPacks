@@ -37,6 +37,7 @@
     <PackageReference Include="Avalonia.X11" Version="0.10.7" Condition="'$(PublishLinux)' == 'True' " />
     <PackageReference Include="Avalonia.Native" Version="0.10.7" Condition="'$(PublishOsx)' == 'True' " />
 
+    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.7" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.7" />
   </ItemGroup>
  
