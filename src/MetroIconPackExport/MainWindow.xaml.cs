@@ -51,7 +51,10 @@ namespace MetroIconPackExport
             exportIconPack<PackIconRadixIconsKind>("Radix", PackIconRadixIconsDataFactory.Create(), true);
             exportIconPack<PackIconRemixIconKind>("Remix", PackIconRemixIconDataFactory.Create(), true);
             exportIconPack<PackIconVaadinIconsKind>("Vaadin", PackIconVaadinIconsDataFactory.Create(), true);
-            
+
+            exportIconPack<PackIconCooliconsKind>("Cool", PackIconCooliconsDataFactory.Create(), true);
+            exportIconPack<PackIconFontistoKind>("Fontisto", PackIconFontistoDataFactory.Create(), true);
+
 
             ExportFromSVG("VSCodeDark", "E:\\downloads\\vscode-icons-master\\vscode-icons-master\\icons\\dark");
             ExportFromSVG("VSCodeLight", "E:\\downloads\\vscode-icons-master\\vscode-icons-master\\icons\\light");
