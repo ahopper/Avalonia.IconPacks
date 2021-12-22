@@ -1,12 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFrameworks>netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>net6.0</TargetFrameworks>
     
     <LangVersion>8.0</LangVersion>
     <Nullable>enable</Nullable>
     
   </PropertyGroup>
+	
   <ItemGroup>
      <Compile Update="**\*.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
@@ -29,16 +30,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.10.7" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.10.7" Condition="'$(PublishWin)'!='True' AND '$(PublishLinux)'!='True' AND '$(PublishOsx)'!='True'" />
+    <PackageReference Include="Avalonia" Version="0.10.11" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.10.11" Condition="'$(PublishWin)'!='True' AND '$(PublishLinux)'!='True' AND '$(PublishOsx)'!='True'" />
 
-    <PackageReference Include="Avalonia.Skia" Version="0.10.7" Condition="'$(PublishWin)'=='True' OR '$(PublishLinux)'=='True' OR '$(PublishOsx)'=='True'" />
-    <PackageReference Include="Avalonia.Win32" Version="0.10.7" Condition="'$(PublishWin)' == 'True' " />
-    <PackageReference Include="Avalonia.X11" Version="0.10.7" Condition="'$(PublishLinux)' == 'True' " />
-    <PackageReference Include="Avalonia.Native" Version="0.10.7" Condition="'$(PublishOsx)' == 'True' " />
+    <PackageReference Include="Avalonia.Skia" Version="0.10.11" Condition="'$(PublishWin)'=='True' OR '$(PublishLinux)'=='True' OR '$(PublishOsx)'=='True'" />
+    <PackageReference Include="Avalonia.Win32" Version="0.10.11" Condition="'$(PublishWin)' == 'True' " />
+    <PackageReference Include="Avalonia.X11" Version="0.10.11" Condition="'$(PublishLinux)' == 'True' " />
+    <PackageReference Include="Avalonia.Native" Version="0.10.11" Condition="'$(PublishOsx)' == 'True' " />
 
-    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.7" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.7" />
+    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.11" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.11" />
   </ItemGroup>
  
     <ItemGroup>

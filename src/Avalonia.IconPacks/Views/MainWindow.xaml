@@ -25,8 +25,12 @@
         </ItemsRepeater.Layout>
         <ItemsRepeater.ItemTemplate>
           <DataTemplate>
-             <Panel Background="White">
-              <DrawingPresenter Margin="4" Drawing="{Binding Drawing}" ClipToBounds="True" />
+            <Panel Background="White" >
+              <Image ClipToBounds="True" Margin="4" >
+                <Image.Source>
+                  <DrawingImage Drawing="{Binding Drawing}" />
+                    </Image.Source>
+              </Image>
             </Panel>
           </DataTemplate>
         </ItemsRepeater.ItemTemplate>
@@ -43,14 +47,17 @@
       </ItemsControl.ItemsPanel>
       <ItemsControl.ItemTemplate>
         <DataTemplate>
-          <DrawingPresenter Width="48" Height="48"  Margin="4" Drawing="{Binding Drawing}">
-            <DrawingPresenter.ContextMenu>
+          <Image  Width="48" Height="48"  Margin="4" ClipToBounds="True">
+            <Image.Source>
+              <DrawingImage Drawing="{Binding Drawing}"/>
+            </Image.Source>
+            <Image.ContextMenu>
               <ContextMenu>
                 <c:SaveAsMenuItem DialogTitle="Save File As" DialogFilters="Windows Icon (*.ico)|ico|Mac Icon (*.icns)|icns|png (*.png)|png"
-                                  Command="{Binding SaveAsIcon}" Header="Save as .ico,.icns,.png"/>
+                      Command="{Binding SaveAsIcon}" Header="Save as .ico,.icns,.png"/>
               </ContextMenu>
-            </DrawingPresenter.ContextMenu>
-          </DrawingPresenter>
+            </Image.ContextMenu>
+          </Image>
         </DataTemplate>
       </ItemsControl.ItemTemplate>
     </ItemsControl>

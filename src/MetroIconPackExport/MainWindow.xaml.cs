@@ -1,4 +1,5 @@
 ﻿using MahApps.Metro.IconPacks;
+using MetroIconPackExport.utils;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,50 +18,50 @@ namespace MetroIconPackExport
         public MainWindow()
         {
             InitializeComponent();
-            exportIcons();
+            ExportIcons();
         }
-        void exportIcons()
+        void ExportIcons()
         {
-            exportIconPack<PackIconMaterialKind>("Material", PackIconMaterialDataFactory.Create());
-            exportIconPack<PackIconMaterialDesignKind>("MaterialDesign", PackIconMaterialDesignDataFactory.Create(),true);
-            exportIconPack<PackIconMaterialLightKind>("MaterialLight", PackIconMaterialLightDataFactory.Create());
-            exportIconPack<PackIconFontAwesomeKind>("FontAwesome", PackIconFontAwesomeDataFactory.Create());
-            exportIconPack<PackIconOcticonsKind>("Octicons", PackIconOcticonsDataFactory.Create());
-            exportIconPack<PackIconModernKind>("Modern", PackIconModernDataFactory.Create());
-            exportIconPack<PackIconEntypoKind>("Entypo+", PackIconEntypoDataFactory.Create());
-            exportIconPack<PackIconSimpleIconsKind>("SimpleIcons", PackIconSimpleIconsDataFactory.Create());
-            exportIconPack<PackIconWeatherIconsKind>("WeatherIcons", PackIconWeatherIconsDataFactory.Create());
-            exportIconPack<PackIconTypiconsKind>("Typicons", PackIconTypiconsDataFactory.Create(),true);
-            exportIconPack<PackIconFeatherIconsKind>("FeatherIcons", PackIconFeatherIconsDataFactory.Create());
-            exportIconPack<PackIconIoniconsKind>("Ionicons", PackIconIoniconsDataFactory.Create());
-            exportIconPack<PackIconJamIconsKind>("JamIcons", PackIconJamIconsDataFactory.Create(),true);
-            exportIconPack<PackIconUniconsKind>("Unicons", PackIconUniconsDataFactory.Create());
-            exportIconPack<PackIconZondiconsKind>("Zondicons", PackIconZondiconsDataFactory.Create());
-            exportIconPack<PackIconEvaIconsKind>("EvaIcons", PackIconEvaIconsDataFactory.Create(),true);
-            exportIconPack<PackIconBoxIconsKind>("BoxIcons", PackIconBoxIconsDataFactory.Create(),true);
-            exportIconPack<PackIconPicolIconsKind>("PicolIcons", PackIconPicolIconsDataFactory.Create());
-            exportIconPack<PackIconRPGAwesomeKind>("RPGAwesome", PackIconRPGAwesomeDataFactory.Create(),true);
-            exportIconPack<PackIconMicronsKind>("Microns", PackIconMicronsDataFactory.Create());
+            ExportIconPack<PackIconMaterialKind>("Material", PackIconMaterialDataFactory.Create());
+            ExportIconPack<PackIconMaterialDesignKind>("MaterialDesign", PackIconMaterialDesignDataFactory.Create(),true);
+            ExportIconPack<PackIconMaterialLightKind>("MaterialLight", PackIconMaterialLightDataFactory.Create());
+            ExportIconPack<PackIconFontAwesomeKind>("FontAwesome", PackIconFontAwesomeDataFactory.Create());
+            ExportIconPack<PackIconOcticonsKind>("Octicons", PackIconOcticonsDataFactory.Create());
+            ExportIconPack<PackIconModernKind>("Modern", PackIconModernDataFactory.Create());
+            ExportIconPack<PackIconEntypoKind>("Entypo+", PackIconEntypoDataFactory.Create());
+            ExportIconPack<PackIconSimpleIconsKind>("SimpleIcons", PackIconSimpleIconsDataFactory.Create());
+            ExportIconPack<PackIconWeatherIconsKind>("WeatherIcons", PackIconWeatherIconsDataFactory.Create());
+            ExportIconPack<PackIconTypiconsKind>("Typicons", PackIconTypiconsDataFactory.Create(),true);
+            ExportIconPack<PackIconFeatherIconsKind>("FeatherIcons", PackIconFeatherIconsDataFactory.Create());
+            ExportIconPack<PackIconIoniconsKind>("Ionicons", PackIconIoniconsDataFactory.Create());
+            ExportIconPack<PackIconJamIconsKind>("JamIcons", PackIconJamIconsDataFactory.Create(),true);
+            ExportIconPack<PackIconUniconsKind>("Unicons", PackIconUniconsDataFactory.Create());
+            ExportIconPack<PackIconZondiconsKind>("Zondicons", PackIconZondiconsDataFactory.Create());
+            ExportIconPack<PackIconEvaIconsKind>("EvaIcons", PackIconEvaIconsDataFactory.Create(),true);
+            ExportIconPack<PackIconBoxIconsKind>("BoxIcons", PackIconBoxIconsDataFactory.Create(),true);
+            ExportIconPack<PackIconPicolIconsKind>("PicolIcons", PackIconPicolIconsDataFactory.Create());
+            ExportIconPack<PackIconRPGAwesomeKind>("RPGAwesome", PackIconRPGAwesomeDataFactory.Create(),true);
+            ExportIconPack<PackIconMicronsKind>("Microns", PackIconMicronsDataFactory.Create());
 
-            exportIconPack<PackIconBootstrapIconsKind>("Bootstrap", PackIconBootstrapIconsDataFactory.Create(),true);
-            exportIconPack<PackIconCodiconsKind>("Codeicons", PackIconCodiconsDataFactory.Create(), true);
-            exportIconPack<PackIconFileIconsKind>("FileIcons", PackIconFileIconsDataFactory.Create(), true);
-            exportIconPack<PackIconFontaudioKind>("Fontaudio", PackIconFontaudioDataFactory.Create(), true);
-            exportIconPack<PackIconForkAwesomeKind>("ForkAwesome", PackIconForkAwesomeDataFactory.Create(), true);
-            exportIconPack<PackIconPixelartIconsKind>("Pixelart", PackIconPixelartIconsDataFactory.Create());
-            exportIconPack<PackIconRadixIconsKind>("Radix", PackIconRadixIconsDataFactory.Create(), true);
-            exportIconPack<PackIconRemixIconKind>("Remix", PackIconRemixIconDataFactory.Create(), true);
-            exportIconPack<PackIconVaadinIconsKind>("Vaadin", PackIconVaadinIconsDataFactory.Create(), true);
+            ExportIconPack<PackIconBootstrapIconsKind>("Bootstrap", PackIconBootstrapIconsDataFactory.Create(),true);
+            ExportIconPack<PackIconCodiconsKind>("Codeicons", PackIconCodiconsDataFactory.Create(), true);
+            ExportIconPack<PackIconFileIconsKind>("FileIcons", PackIconFileIconsDataFactory.Create(), true);
+            ExportIconPack<PackIconFontaudioKind>("Fontaudio", PackIconFontaudioDataFactory.Create(), true);
+            ExportIconPack<PackIconForkAwesomeKind>("ForkAwesome", PackIconForkAwesomeDataFactory.Create(), true);
+            ExportIconPack<PackIconPixelartIconsKind>("Pixelart", PackIconPixelartIconsDataFactory.Create());
+            ExportIconPack<PackIconRadixIconsKind>("Radix", PackIconRadixIconsDataFactory.Create(), true);
+            ExportIconPack<PackIconRemixIconKind>("Remix", PackIconRemixIconDataFactory.Create(), true);
+            ExportIconPack<PackIconVaadinIconsKind>("Vaadin", PackIconVaadinIconsDataFactory.Create(), true);
 
-            exportIconPack<PackIconCooliconsKind>("Cool", PackIconCooliconsDataFactory.Create(), true);
-            exportIconPack<PackIconFontistoKind>("Fontisto", PackIconFontistoDataFactory.Create(), true);
+            ExportIconPack<PackIconCooliconsKind>("Cool", PackIconCooliconsDataFactory.Create(), true);
+            ExportIconPack<PackIconFontistoKind>("Fontisto", PackIconFontistoDataFactory.Create(), true);
 
 
             ExportFromSVG("VSCodeDark", "E:\\downloads\\vscode-icons-master\\vscode-icons-master\\icons\\dark");
             ExportFromSVG("VSCodeLight", "E:\\downloads\\vscode-icons-master\\vscode-icons-master\\icons\\light");
         }
 
-        void exportIconPack<P>(string title, IDictionary<P, string> pack, bool invert = false) where P : Enum
+        void ExportIconPack<P>(string title, IDictionary<P, string> pack, bool invert = false) where P : Enum
         {
             //TODO use proper xml writer
             using (var file = File.CreateText($"..\\..\\..\\Avalonia.IconPacks\\Icons\\{title}.xaml"))
@@ -77,10 +78,10 @@ namespace MetroIconPackExport
                     var name = icon.ToString();
                     
                     var data = pack[(P)icon];
-                    if (invert)
-                    {
-                        data = invertPath(data);
-                    }
+                    if (data == null || data.Length < 4) continue;
+                  
+                    data = TidyPath(data,invert,16.0);
+                  
                     if (!String.IsNullOrEmpty(data))
                     {
                         file.WriteLine($"            <GeometryDrawing x:Key=\"{title}.{name}\" Brush=\"#FF000000\" Geometry=\"{data}\"/>");
@@ -127,7 +128,7 @@ namespace MetroIconPackExport
                             file.WriteLine($"            </DrawingGroup>");
                         }
                     }
-                    catch (Exception e)
+                    catch (Exception)
                     {
 
                     }
@@ -138,13 +139,15 @@ namespace MetroIconPackExport
             }
  
         }
-        string invertPath(string path)
+        string TidyPath(string path, bool invert, double size)
         {
-            // from https://stackoverflow.com/questions/249971/wpf-how-to-apply-a-generaltransform-to-a-geometry-data-and-return-the-new-geome
             var g=Geometry.Parse(path);
-            PathGeometry geometryTransformed = Geometry.Combine(Geometry.Empty, g, GeometryCombineMode.Union, new ScaleTransform(1, -1));
-            return geometryTransformed.ToString();
-            
+            var bounds = g.Bounds;// GetRenderBounds(new Pen(Brushes.Black, 0));
+            var scale=size/Math.Max(bounds.Width, bounds.Height);
+
+            return PathUtils.Transform(path, -bounds.Left, invert? -bounds.Bottom : -bounds.Top, scale, invert ? -scale : scale);
+
         }
     }
+   
 }
